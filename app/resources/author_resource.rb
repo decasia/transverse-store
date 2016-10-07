@@ -1,2 +1,2 @@
-class AuthorResource < JSONAPI::Resource
+class AuthorResource #< JSONAPI::Resource
 end

@@ -3,14 +3,8 @@ class AuthorSerializer < ActiveModel::Serializer
     :name,
     :description
 
-  has_many :works do
-    link(:related) {works_path(author_id: object.id)}
-  end
+  has_many :works
 
   link(:self) { author_path(object.id) }
-  # link(:works) { works_path(author_id: object.id) }
-
-  def works
-    object.works.loaded? ? object.works : object.works.none
-  end
+  link(:works) { works_path(author_id: object.id) }
 end

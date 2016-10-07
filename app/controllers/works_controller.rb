@@ -7,7 +7,7 @@ class WorksController < ApplicationController
 
   def resource_params
     ActiveModelSerializers::Deserialization.jsonapi_parse!(params,
-      only: [:name, :description, :author_id]
+      only: [:name, :description, :author]
     )
   end
 end

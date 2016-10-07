@@ -1,21 +1,20 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
-# Use postgresql as the database for Active Record
-gem 'pg', '~> 0.18'
-# Use Puma as the app server
-gem 'puma', '~> 3.0'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-# gem 'jbuilder', '~> 2.5'
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 3.0'
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+# shared hosting only supports mysql
+gem 'mysql2', '~> 0.4.4'
+
+# cancan for permissions
+gem 'cancancan', '~> 1.15.0'
+gem 'bcrypt', '~> 3.1.5'
+
+# TODO a V2 of the LTI gem is in beta. worth checking out later
+gem 'ims-lti', '1.1.13'
+
+# load config from .env
+gem 'dotenv-rails', '~> 2.1.1'
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
@@ -30,7 +29,13 @@ group :development, :test do
 end
 
 group :development do
+  gem 'puma', '~> 3.0'
   gem 'capistrano', '~> 3.6'
+  gem 'capistrano-rails', '~> 1.1.8'
+  gem 'capistrano-bundler', '~> 1.2'
+  gem 'capistrano-passenger', '~> 0.2.0'
+
+  # profiling
   gem 'derailed'
   gem 'stackprof'
   gem 'listen', '~> 3.0.5'
@@ -42,6 +47,3 @@ end
 group :test do
   gem 'shoulda-matchers', '~> 3.1'
 end
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
