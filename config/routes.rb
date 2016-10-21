@@ -6,4 +6,10 @@ Rails.application.routes.draw do
     resources :authors
     resources :works
   end
+
+  scope 'auth' do
+    post 'password', to: 'authentication#password'
+    post 'lti', to: 'authentication#lti'
+  end
+
 end

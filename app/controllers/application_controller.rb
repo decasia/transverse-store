@@ -1,10 +1,17 @@
 class ApplicationController < ActionController::API
   include ActionController::MimeResponds
 
-  # TODO we should have an auth flow that uses session cookies once established,
-  # otherwise requests login.
   def current_user
-    # eventually pass currently selected group at init
-    UserSession.new(User.first)
+    return nil unless session.has_key? :username
+
+    user = User.find_by username: session[:username]
+    return nil unless user.present?
+
+    user_session = UserSession.new user, session[:group_id]
+
+    # store current group id in session
+    session[:group_id] = user_session.current_group_id
+
+    user_session
   end
 end
