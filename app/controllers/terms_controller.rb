@@ -1,6 +1,8 @@
 class TermsController < ApplicationController
   include RecordLoading
 
+  before_action :authenticate_user
+
   def resource_params
     ActiveModelSerializers::Deserialization.jsonapi_parse!(params,
       only: [:name, :example, :definition, :discussion, :author]

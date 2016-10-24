@@ -1,5 +1,7 @@
 class AuthorsController < ApplicationController
   include RecordLoading
+  
+  before_action :authenticate_user
 
   def include_children
     [:works]

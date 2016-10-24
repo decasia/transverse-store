@@ -13,6 +13,8 @@ gem 'bcrypt', '~> 3.1.5'
 # TODO a V2 of the LTI gem is in beta. worth checking out later
 gem 'ims-lti', '1.1.13'
 
+gem 'knock', '~> 2.0'
+
 # load config from .env
 gem 'dotenv-rails', '~> 2.1.1'
 
@@ -34,6 +36,8 @@ group :development do
   gem 'capistrano-rails', '~> 1.1.8'
   gem 'capistrano-bundler', '~> 1.2'
   gem 'capistrano-passenger', '~> 0.2.0'
+
+  gem 'pry-rails'
 
   # profiling
   gem 'derailed'

@@ -1,6 +1,8 @@
 class WorksController < ApplicationController
   include RecordLoading
 
+  before_action :authenticate_user
+
   def index_by
     :author_id
   end

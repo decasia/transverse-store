@@ -1,5 +1,7 @@
 class DocsController < ApplicationController
   include RecordLoading
+  
+  before_action :authenticate_user
 
   def resource_params
     parsed = ActiveModelSerializers::Deserialization.jsonapi_parse!(params,
