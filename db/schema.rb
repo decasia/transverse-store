@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161024183237) do
+ActiveRecord::Schema.define(version: 20161031183935) do
 
   create_table "authors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -51,12 +51,12 @@ ActiveRecord::Schema.define(version: 20161024183237) do
     t.string   "name"
     t.text     "source",     limit: 65535
     t.text     "content",    limit: 65535
-    t.integer  "work_id"
+    t.integer  "author_id"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.integer  "group_id"
+    t.index ["author_id"], name: "index_notes_on_author_id", using: :btree
     t.index ["group_id"], name: "index_notes_on_group_id", using: :btree
-    t.index ["work_id"], name: "index_notes_on_work_id", using: :btree
   end
 
   create_table "terms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
