@@ -1,4 +1,5 @@
 class Term < ApplicationRecord
+  belongs_to :group
   belongs_to :author
 
   serialize :example, JSON
