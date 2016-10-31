@@ -3,6 +3,7 @@ class User < ApplicationRecord
   has_secure_password validations: false
 
   def change_group(new_id)
+    new_id = Integer(new_id) # ensure integer format
     if self.groups.map(&:id).include?(new_id)
       self.current_group_id = new_id
     else
