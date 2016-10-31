@@ -51,4 +51,5 @@ group :test do
   gem 'shoulda-matchers', '~> 3.1'
   gem 'rspec-rails'
   gem 'guard-rspec', require: false
+  gem 'factory_girl_rails', '~> 4.7.0'
 end
