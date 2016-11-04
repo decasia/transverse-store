@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161031183935) do
+ActiveRecord::Schema.define(version: 20161102211737) do
 
   create_table "authors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(version: 20161031183935) do
     t.string   "oauth_consumer_secret"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "oauth_consumer_key"
+    t.index ["oauth_consumer_key"], name: "index_groups_on_oauth_consumer_key", using: :btree
   end
 
   create_table "groups_users", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
