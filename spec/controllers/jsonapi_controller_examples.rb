@@ -1,6 +1,6 @@
 require 'controllers/auth_helpers'
 
-RSpec.shared_examples 'a JSONAPI method' do |expected_status|
+RSpec.shared_examples 'a JSONAPI endpoint' do |expected_status|
   it 'responds as JSONAPI' do
     expect(response.content_type).to eq 'application/vnd.api+json'
   end
@@ -20,7 +20,7 @@ RSpec.shared_examples 'a JSONAPI controller' do |model|
         get :index
       end
 
-      it_behaves_like 'a JSONAPI method', 200
+      it_behaves_like 'a JSONAPI endpoint', 200
 
       it 'responds with the right content' do
         body = JSON.parse response.body
@@ -36,7 +36,7 @@ RSpec.shared_examples 'a JSONAPI controller' do |model|
         get :show, params: { id: @record.id }
       end
 
-      it_behaves_like 'a JSONAPI method', 200
+      it_behaves_like 'a JSONAPI endpoint', 200
 
       it 'responds with the right content' do
         body = JSON.parse response.body
