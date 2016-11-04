@@ -30,6 +30,11 @@ module TransverseStore
       g.test_framework :rspec
     end
 
+    # integrates with ENV setting to redirect to ember UI after LTI auth
+    config.x.redirect_on_lti_auth = ENV['REDIRECT_ON_LTI_AUTH']
+
+    config.autoload_paths << "#{Rails.root}/app/services"
+
     config.api_only = true
   end
 end

@@ -2,7 +2,28 @@ require 'rails_helper'
 require 'controllers/auth_helpers'
 
 RSpec.describe AuthenticationController, type: :controller do
-  pending 'tests LTI integration'
+  context 'with LTI integration' do
+    before do
+      @key = SecureRandom.hex(16)
+      @secret = SecureRandom.hex(16)
+      @test_group = Group.create name: 'LTI Test',
+        oauth_consumer_key: @key,
+        oauth_consumer_secret: @secret
+    end
+    context 'with valid request' do
+      before do
+        @consumer = OAuth::Consumer.new @key, @secret
+        @token = OAuth::AccessToken.new @consumer
+
+        @token.request :post
+      end
+      pending 'it redirects to the UI with a valid JWT token'
+      pending 'it updates the user attributes'
+    end
+    context 'with invalid request' do
+      pending 'it redirects to the UI without a valid JWT token'
+    end
+  end
 
   context 'with groups' do
     context 'with a valid user' do
