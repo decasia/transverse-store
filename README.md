@@ -39,6 +39,13 @@ All environment-specific configuration is stored in a [.env file](https://github
 - DATABASE_NAME - mysql database name for your environment
 - DATABASE_USERNAME - mysql username
 - DATABASE_PASSWORD - mysql password
+- REDIRECT_ON_LTI_AUTH - where to redirect users who authenticate via LTI integration.
+
+Note on `REDIRECT_ON_LTI_AUTH`: this would normally be a route in the accompanying
+Ember application. It should contain the magic string `JWT_VALUE`, which will get
+replaced by a valid [JSON Web Token](https://jwt.io/) for authorized users. A good
+value for developers is `http://localhost:4200/user/token/JWT_VALUE` (if you run
+Ember's standard local dev server).
 
 ## Open Source
 
