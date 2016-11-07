@@ -12,7 +12,7 @@ Written at [Whittier Digital Liberal Arts Center](http://diglibarts.whittier.edu
 
 ## What does it do?
 
-This project provides data storage and session management. All data is transferred via [JSON API](http://jsonapi.org). Since this project is intended for use in an educational environment, user auth is via [IMS LTI](https://www.imsglobal.org/activity/learning-tools-interoperability), specifically the [ims-lti gem](https://github.com/instructure/ims-lti).
+This project provides data storage and session management. All data is transferred via [JSON API](http://jsonapi.org), authenticated by session-specific [JSON Web Tokens](https://jwt.io/). Since this project is intended for use in an educational environment, initial user login is primarily via [IMS LTI](https://www.imsglobal.org/activity/learning-tools-interoperability), specifically the [ims-lti gem](https://github.com/instructure/ims-lti). (The application can handle local accounts as well, if necessary.)
 
 ## How to use
 
