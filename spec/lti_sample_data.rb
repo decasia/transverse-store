@@ -1,8 +1,8 @@
 SAMPLE_LTI_REQUEST = {
   "oauth_version"=>"1.0",
-  "oauth_nonce"=>"SOME_NONCE_VALUE",
-  "oauth_timestamp"=>"1478277786",
-  "oauth_consumer_key"=>"CONSUMER_KEY_VALUE",
+  # "oauth_nonce"=>"SOME_NONCE_VALUE",
+  # "oauth_timestamp"=>"1478277786",
+  # "oauth_consumer_key"=>"CONSUMER_KEY_VALUE",
   "resource_link_title"=>"Transversions",
   "resource_link_description"=>"",
   "user_id"=>"65432",
@@ -33,5 +33,5 @@ SAMPLE_LTI_REQUEST = {
   "launch_presentation_document_target"=>"frame",
   "launch_presentation_return_url"=>"https://cms.whittier.edu/mod/lti/return.php?course=98989&launch_container=5&instanceid=384&sesskey=x1Cu4SUnnf",
   "oauth_signature_method"=>"HMAC-SHA1",
-  "oauth_signature"=>"MUdq0bt+DUUHsqeS0MRVF1vsIsQ="
+  # "oauth_signature"=>"MUdq0bt+DUUHsqeS0MRVF1vsIsQ="
 }

@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'lti_sample_data'
 require 'controllers/auth_helpers'
 
 RSpec.describe AuthenticationController, type: :controller do
@@ -12,13 +13,12 @@ RSpec.describe AuthenticationController, type: :controller do
     end
     context 'with valid request' do
       before do
-        @consumer = OAuth::Consumer.new @key, @secret
-        @token = OAuth::AccessToken.new @consumer
-
-        @token.request :post
+        # do oauth setup here
       end
+      pending 'it prints success to the log'
       pending 'it redirects to the UI with a valid JWT token'
       pending 'it updates the user attributes'
+      pending 'it validates that the nonce was not recently used'
     end
     context 'with invalid request' do
       pending 'it redirects to the UI without a valid JWT token'

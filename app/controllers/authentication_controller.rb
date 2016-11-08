@@ -28,7 +28,7 @@ class AuthenticationController < ApplicationController
       raise 'LTI auth failed'
     end
   rescue => e
-    puts e.message, request
+    puts e.message, params.inspect
     # NB the client will now have to figure out how to handle a missing JWT
     redirect_to ui_login_path('')
   end
