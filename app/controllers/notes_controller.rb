@@ -4,7 +4,7 @@ class NotesController < ApplicationController
   before_action :authenticate_user
 
   def resource_params
-    ActiveModelSerializers::Deserialization.jsonapi_parse!(params,
+    parsed = ActiveModelSerializers::Deserialization.jsonapi_parse!(params,
       only: [:name, :author]
     )
 
