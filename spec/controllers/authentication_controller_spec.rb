@@ -33,11 +33,17 @@ RSpec.describe AuthenticationController, type: :controller do
         before do
           stub_current_user
           allow(@user).to receive(:change_group).with('2').and_return(true)
+          allow(@user).to receive(:save)
         end
 
         it 'allows you to change your group ID' do
           post :change_group, params: {group_id: 2}
           expect(response.status).to eq 200
+        end
+
+        it 'persists the updated current_group_id' do
+          post :change_group, params: {group_id: 2}
+          expect(@user).to have_received(:save)
         end
       end
 

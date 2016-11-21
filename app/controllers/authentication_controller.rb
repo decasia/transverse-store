@@ -38,6 +38,7 @@ class AuthenticationController < ApplicationController
       if current_user
         begin
           current_user.change_group params[:group_id]
+          current_user.save
           render json: current_user
         rescue => e
           render json: {error: 'Invalid group ID'}, status: 400
