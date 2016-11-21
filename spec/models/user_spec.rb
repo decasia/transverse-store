@@ -6,6 +6,7 @@ RSpec.describe User, type: :model do
   it { is_expected.to respond_to(:firstname) }
   it { is_expected.to respond_to(:lastname) }
   it { is_expected.to respond_to(:lms_role) }
+  it { is_expected.to respond_to(:lms_context_title) }
 
   # provided by has_secure_password
   it { is_expected.to respond_to(:password=) }

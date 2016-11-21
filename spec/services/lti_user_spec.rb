@@ -10,6 +10,7 @@ RSpec.describe LTIUser do
       expect(@lti_user.instance_variable_get('@firstname')).to eq SAMPLE_LTI_REQUEST['lis_person_name_given']
       expect(@lti_user.instance_variable_get('@lastname')).to eq SAMPLE_LTI_REQUEST['lis_person_name_family']
       expect(@lti_user.instance_variable_get('@lms_role')).to eq SAMPLE_LTI_REQUEST['roles']
+      expect(@lti_user.instance_variable_get('@lms_context_title')).to eq SAMPLE_LTI_REQUEST['context_title']
     end
 
   end

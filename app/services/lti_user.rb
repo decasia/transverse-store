@@ -7,6 +7,7 @@ class LTIUser
     @firstname = params['lis_person_name_given']
     @lastname = params['lis_person_name_family']
     @lms_role = params['roles']
+    @lms_context_title = params['context_title']
   end
 
   def update_attributes(group)
@@ -15,6 +16,7 @@ class LTIUser
     @user.firstname = @firstname
     @user.lastname = @lastname
     @user.lms_role = @lms_role
+    @user.lms_context_title = @lms_context_title
     unless @user.groups.include?(group)
       @user.groups << group
     end
