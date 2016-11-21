@@ -3,6 +3,9 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   it { is_expected.to respond_to(:username) }
   it { is_expected.to respond_to(:email) }
+  it { is_expected.to respond_to(:firstname) }
+  it { is_expected.to respond_to(:lastname) }
+  it { is_expected.to respond_to(:lms_role) }
 
   # provided by has_secure_password
   it { is_expected.to respond_to(:password=) }

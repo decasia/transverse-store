@@ -3,6 +3,9 @@ class UserSerializer < ActiveModel::Serializer
   attributes :id,
     :username,
     :email,
+    :firstname,
+    :lastname,
+    :lms_role,
     :group_data
 
   link(:self) { user_path(object.id) }

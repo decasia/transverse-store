@@ -4,11 +4,17 @@ class LTIUser
   def initialize(params)
     @email = params['lis_person_contact_email_primary']
     @username = params['ext_user_username']
+    @firstname = params['lis_person_name_given']
+    @lastname = params['lis_person_name_family']
+    @lms_role = params['roles']
   end
 
   def update_attributes(group)
     @user = User.find_or_create_by(username: @username)
     @user.email = @email
+    @user.firstname = @firstname
+    @user.lastname = @lastname
+    @user.lms_role = @lms_role
     unless @user.groups.include?(group)
       @user.groups << group
     end
