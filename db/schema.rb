@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170103181206) do
+ActiveRecord::Schema.define(version: 20170103192839) do
 
   create_table "authors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -98,6 +98,7 @@ ActiveRecord::Schema.define(version: 20170103181206) do
     t.string   "lastname"
     t.string   "lms_role"
     t.string   "lms_context_title"
+    t.boolean  "is_instructor",     default: false
   end
 
   create_table "works", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

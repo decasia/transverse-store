@@ -28,7 +28,8 @@ class User < ApplicationRecord
       {
         username: username,
         email: email,
-        groups: group_data
+        groups: group_data,
+        is_instructor: is_instructor
       }
     else
       { username: username }

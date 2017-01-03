@@ -5,6 +5,8 @@ RSpec.describe User, type: :model do
   it { is_expected.to respond_to(:email) }
   it { is_expected.to respond_to(:firstname) }
   it { is_expected.to respond_to(:lastname) }
+  it { is_expected.to respond_to(:is_admin) }
+  it { is_expected.to respond_to(:is_instructor) }
   it { is_expected.to respond_to(:lms_role) }
   it { is_expected.to respond_to(:lms_context_title) }
 

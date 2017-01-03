@@ -2,6 +2,7 @@ class TermsController < ApplicationController
   include RecordLoading
 
   before_action :authenticate_user
+  load_and_authorize_resource :term, instance_name: :record
 
   def resource_params
     parsed = ActiveModelSerializers::Deserialization.jsonapi_parse!(params,

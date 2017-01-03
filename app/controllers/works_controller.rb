@@ -2,6 +2,7 @@ class WorksController < ApplicationController
   include RecordLoading
 
   before_action :authenticate_user
+  load_and_authorize_resource :work, instance_name: :record
 
   def index_by
     :author_id

@@ -9,7 +9,7 @@ class DocVersionsController < ApplicationController
   end
 
   def index
-    doc = Doc.find(params[:doc_id])
+    doc = Doc.find params[:doc_id]
     authorize! :show, doc
     @records = DocVersion.where doc_id: params[:doc_id]
     render jsonapi: @records

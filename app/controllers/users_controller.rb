@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   before_action :authenticate_user
 
   def index
@@ -7,14 +6,14 @@ class UsersController < ApplicationController
     if params[:self]
       render json: current_user
     else
-      # TODO load only members of current group
-      @users = User.all
+      @users = User.where group_id: current_user.current_group_id
       render jsonapi: @users
     end
   end
 
   def show
     @user = User.find params[:id]
+    authorize! :show, @user
     render jsonapi: @user
   end
 

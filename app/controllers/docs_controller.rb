@@ -2,11 +2,9 @@ class DocsController < ApplicationController
   include RecordLoading
 
   before_action :authenticate_user
+  load_and_authorize_resource :doc, instance_name: :record
 
   def update
-    @record = Doc.find params[:id]
-    authorize! :update, @record
-
     if @record.update resource_params
       # create a new version
       DocVersion.create content: @record.content,
