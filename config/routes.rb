@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   scope 'api' do
     resources :notes
     resources :docs
+    resources :doc_versions
     resources :terms
     resources :authors
     resources :works

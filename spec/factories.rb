@@ -22,6 +22,13 @@ FactoryGirl.define do
     work_id 1
   end
 
+  factory :doc_version do
+    content { blank_mobiledoc }
+    group_id 1
+    doc_id 1
+    user_id 1
+  end
+
   factory :note do
     name 'Epistemology'
     content { blank_mobiledoc }
