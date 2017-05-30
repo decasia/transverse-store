@@ -2,7 +2,7 @@
 
 A Ruby on Rails back end for the Transversions collaborative writing project
 
-The front end is at http://github.org/diglibarts/transverse
+The front end is at http://github.com/diglibarts/transversions
 
 ## Credits
 
